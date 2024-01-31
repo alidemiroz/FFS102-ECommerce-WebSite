@@ -8,7 +8,17 @@ namespace FFS102_Ecommerce_Admin.Controllers
 {
     public class CategoryController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        public IActionResult Edit()
+        {
+            return View();
+        }
+
+        public IActionResult Delete()
         {
             return View();
         }

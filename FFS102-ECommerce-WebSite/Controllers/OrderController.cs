@@ -8,7 +8,12 @@ namespace FFS102_ECommerce_WebSite.Controllers
 {
     public class OrderController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        public IActionResult Details()
         {
             return View();
         }

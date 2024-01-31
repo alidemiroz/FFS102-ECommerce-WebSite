@@ -8,7 +8,22 @@ namespace FFS102_ECommerce_WebSite.Controllers
 {
     public class ProfileController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Details()
+        {
+            return View();
+        }
+
+        public IActionResult Edit()
+        {
+            return View();
+        }
+
+        public IActionResult MyOrders()
+        {
+            return View();
+        }
+
+        public IActionResult MyProducts()
         {
             return View();
         }

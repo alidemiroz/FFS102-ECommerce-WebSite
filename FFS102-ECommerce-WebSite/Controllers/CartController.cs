@@ -8,7 +8,12 @@ namespace FFS102_ECommerce_WebSite.Controllers
 {
     public class CartController : Controller
     {
-        public IActionResult Index()
+        public IActionResult AddProduct()
+        {
+            return View();
+        }
+
+        public IActionResult Edit()
         {
             return View();
         }

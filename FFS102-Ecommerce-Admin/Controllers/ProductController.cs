@@ -8,7 +8,7 @@ namespace FFS102_Ecommerce_Admin.Controllers
 {
     public class ProductController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Delete()
         {
             return View();
         }
