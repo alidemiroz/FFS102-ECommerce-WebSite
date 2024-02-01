@@ -14,8 +14,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Views\Auth\" />
+    <None Remove="Views\Profile\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Auth\" />
+    <Folder Include="Views\Profile\" />
   </ItemGroup>
 </Project>
