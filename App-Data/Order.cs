@@ -1,11 +1,23 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace App_Data
 {
-	public class Order
+	public class Order : BaseObject
 	{
-		public Order()
-		{
-		}
-	}
+        [Required]
+        public int UserId { get; set; }
+
+        [Required]
+        [MinLength(2)]
+        public string OrderCode { get; set; }
+
+        [Required]
+        [MinLength(2)]
+        [MaxLength(250)]
+        public string Adress { get; set; }
+
+
+    }
 }
 
