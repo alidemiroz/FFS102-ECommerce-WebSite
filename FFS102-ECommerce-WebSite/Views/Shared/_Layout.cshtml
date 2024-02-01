@@ -21,8 +21,35 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="~/css/style.css" rel="stylesheet">
 
-    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            min-width: 180px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            
+        }
+
+        .dropdown-menu a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+            .dropdown-menu a:hover {
+                background-color: #f1f1f1
+            }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+    </style>
+
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+
+        @*<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
         <link rel="stylesheet" href="~/FFS102_ECommerce.styles.css" asp-append-version="true" />*@
 </head>
 <body>
@@ -75,23 +102,15 @@
                     <a asp-controller="Home" asp-action="Contact" class="nav-item nav-link">İletişim</a>
                 </div>
                 <div class="navbar-nav ml-auto py-0">
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                    <div class="nav-item dropdown" style="border: 1px solid #D19C97; border-radius: 50px">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown">
                             <i style="color: #D19C97" class="fa-solid fa-user"></i>
                         </a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="cart.html" class="dropdown-item">Shopping Cart</a>
-                            <a href="checkout.html" class="dropdown-item">Checkout</a>
+                            <a asp-controller="Auth" asp-action="Login" class="nav-item nav-link">Giriş Yap</a>
+                            <a asp-controller="Auth" asp-action="Logout" class="nav-item nav-link">Çıkış Yap</a>
                         </div>
                     </div>
-                    <a asp-controller="Auth" asp-action="Login" class="nav-item nav-link">
-                        <i style="color: #D19C97" class="fa-solid fa-arrow-right-to-bracket"></i>
-                        <span class="badge">Giriş Yap</span>
-                    </a>
-                    <a asp-controller="Auth" asp-action="Logout" class="nav-item nav-link">
-                        <i style="color: #D19C97" class="fa-solid fa-xmark"></i>
-                        <span class="badge">Çıkış Yap</span>
-                    </a>
                 </div>
             </div>
         </nav>
@@ -173,7 +192,7 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
-    <!--Icons-->
+    <!-- Icons -->
     <script src="https://kit.fontawesome.com/e6f8d2bdde.js" crossorigin="anonymous"></script>
 
     <!-- JavaScript Libraries -->
@@ -190,8 +209,8 @@
     <script src="~/js/main.js"></script>
 
     @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+        @*<script src="~/js/site.js" asp-append-version="true"></script>
         @await RenderSectionAsync("Scripts", required: false)*@
 </body>
 </html>
