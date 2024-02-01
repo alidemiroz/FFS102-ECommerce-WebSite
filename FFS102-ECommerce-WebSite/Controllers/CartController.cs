@@ -8,6 +8,7 @@ namespace FFS102_ECommerce_WebSite.Controllers
 {
     public class CartController : Controller
     {
+        [HttpPost]
         public IActionResult AddProduct()
         {
             return View();

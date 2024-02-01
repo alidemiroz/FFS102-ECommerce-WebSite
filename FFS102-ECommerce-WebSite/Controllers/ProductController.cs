@@ -23,6 +23,7 @@ namespace FFS102_ECommerce_WebSite.Controllers
             return View();
         }
 
+        [HttpPost]
         public IActionResult Comment()
         {
             return View();
