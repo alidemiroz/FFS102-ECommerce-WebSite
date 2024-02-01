@@ -16,4 +16,10 @@
     <Content Remove="wwwroot\css\site.css" />
     <Content Remove="wwwroot\js\site.js" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Category\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Category\" />
+  </ItemGroup>
 </Project>
