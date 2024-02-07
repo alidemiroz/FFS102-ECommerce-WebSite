@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ECApp_Data.Product>
+﻿@model List<ECApp_Data.ViewModels>
 
 <!DOCTYPE html>
 <html lang="tr">
@@ -37,23 +37,10 @@
                 </a>
                 <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical">
                     <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
-                        <div class="nav-item dropdown">
-                            <a class="nav-link" data-toggle="dropdown">Kıyafetler<i class="fa fa-angle-down float-right mt-1"></i></a>
-                            <div class="dropdown-menu position-absolute border-0 rounded-0 w-100 m-0">
-                                <a asp-controller="Home" asp-action="Listing" class="dropdown-item">Erkek Kıyafetleri</a>
-                                <a asp-controller="Home" asp-action="Listing" class="dropdown-item">Kadın Kıyafetleri</a>
-                                <a asp-controller="Home" asp-action="Listing" class="dropdown-item">Çocuk Kıyafetleri</a>
-                            </div>
-                        </div>
-                        <a asp-controller="Home" asp-action="Listing" class="nav-item nav-link">Tişörtler</a>
-                        <a asp-controller="Home" asp-action="Listing" class="nav-item nav-link">Pantolonlar</a>
-                        <a asp-controller="Home" asp-action="Listing" class="nav-item nav-link">Mayolar</a>
-                        <a asp-controller="Home" asp-action="Listing" class="nav-item nav-link">Pijamalar</a>
-                        <a asp-controller="Home" asp-action="Listing" class="nav-item nav-link">Spor Giyim</a>
-                        <a asp-controller="Home" asp-action="Listing" class="nav-item nav-link">Tulumlar</a>
-                        <a asp-controller="Home" asp-action="Listing" class="nav-item nav-link">Kabanlar</a>
-                        <a asp-controller="Home" asp-action="Listing" class="nav-item nav-link">Ceketler</a>
-                        <a asp-controller="Home" asp-action="Listing" class="nav-item nav-link">Ayakkabılar</a>
+                        @foreach (var item in Model)
+                        {
+                            <a asp-controller="Home" asp-action="Listing" asp-route-id="@item.Category.Id" class="nav-item nav-link">@Html.DisplayFor(ModelItem => item.Category.Name)</a>
+                        }
                     </div>
                 </nav>
             </div>
@@ -126,66 +113,6 @@
         </div>
     </div>
     <!-- Featured End -->
-    <!-- Categories Start -->
-    <div class="container-fluid pt-5">
-        <div class="row px-xl-5 pb-3">
-            <div class="col-lg-4 col-md-6 pb-1">
-                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                    <p class="text-right">15 Products</p>
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="img/cat-1.jpg" alt="">
-                    </a>
-                    <h5 class="font-weight-semi-bold m-0">Erkek Kıyafetleri</h5>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 pb-1">
-                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                    <p class="text-right">15 Products</p>
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="img/cat-2.jpg" alt="">
-                    </a>
-                    <h5 class="font-weight-semi-bold m-0">Kadın Kıyafetleri</h5>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 pb-1">
-                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                    <p class="text-right">15 Products</p>
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="img/cat-3.jpg" alt="">
-                    </a>
-                    <h5 class="font-weight-semi-bold m-0">Çocuk Kıyafetleri</h5>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 pb-1">
-                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                    <p class="text-right">15 Products</p>
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="img/cat-4.jpg" alt="">
-                    </a>
-                    <h5 class="font-weight-semi-bold m-0">Aksesuarlar</h5>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 pb-1">
-                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                    <p class="text-right">15 Products</p>
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="img/cat-5.jpg" alt="">
-                    </a>
-                    <h5 class="font-weight-semi-bold m-0">Çantalar</h5>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 pb-1">
-                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                    <p class="text-right">15 Products</p>
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="img/cat-6.jpg" alt="">
-                    </a>
-                    <h5 class="font-weight-semi-bold m-0">Ayakkabılar</h5>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Categories End -->
     <!-- Offer Start -->
     <div class="container-fluid offer pt-5">
         <div class="row px-xl-5">
@@ -226,9 +153,9 @@
                             <img class="img-fluid w-100" src="img/product-1.jpg" alt="">
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 class="text-truncate mb-3">@Html.DisplayFor(ModelItem => item.Name)</h6>
+                            <h6 class="text-truncate mb-3">@Html.DisplayFor(ModelItem => item.Product.Name)</h6>
                             <div class="d-flex justify-content-center">
-                                <h6>@Html.DisplayFor(ModelItem => item.Price)</h6>
+                                <h6>@Html.DisplayFor(ModelItem => item.Product.Price)</h6>
                             </div>
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
@@ -255,9 +182,9 @@
                             <img class="img-fluid w-100" src="img/product-1.jpg" alt="">
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 class="text-truncate mb-3">@Html.DisplayFor(ModelItem => item.Name)</h6>
+                            <h6 class="text-truncate mb-3">@Html.DisplayFor(ModelItem => item.Product.Name)</h6>
                             <div class="d-flex justify-content-center">
-                                <h6>@Html.DisplayFor(ModelItem => item.Price)</h6>
+                                <h6>@Html.DisplayFor(ModelItem => item.Product.Price)</h6>
                             </div>
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
