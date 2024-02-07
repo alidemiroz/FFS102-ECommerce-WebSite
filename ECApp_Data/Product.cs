@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace App_Data
+namespace ECApp_Data
 {
 	public class Product : BaseObject
 	{

@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace App_Data
+namespace ECApp_Data
 {
 	public class User : BaseObject
 	{

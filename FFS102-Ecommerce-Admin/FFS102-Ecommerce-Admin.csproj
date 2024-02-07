@@ -28,4 +28,12 @@
     <Folder Include="Views\User\" />
     <Folder Include="Views\Comment\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\App-Data\App-Data.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\ECApp_Data\ECApp_Data.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
