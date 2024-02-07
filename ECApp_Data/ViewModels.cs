@@ -3,15 +3,15 @@ namespace ECApp_Data
 {
 	public class ViewModels
 	{
-		public CartItem CartItem { get; set; }
-        public Category Category { get; set; }
-        public Order Order { get; set; }
-        public OrderItem OrderItem { get; set; }
-        public Product Product { get; set; }
-        public ProductComment ProductComment { get; set; }
-        public ProductImage ProductImage { get; set; }
-        public Role Role { get; set; }
-        public User User { get; set; }
+		public List<CartItem> CartItem { get; set; }
+        public List<Category> Category { get; set; }
+        public List<Order> Order { get; set; }
+        public List<OrderItem> OrderItem { get; set; }
+        public List<Product> Product { get; set; }
+        public List<ProductComment> ProductComment { get; set; }
+        public List<ProductImage> ProductImage { get; set; }
+        public List<Role> Role { get; set; }
+        public List<User> User { get; set; }
     }
 }
 
