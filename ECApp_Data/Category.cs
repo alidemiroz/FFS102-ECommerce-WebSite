@@ -10,15 +10,13 @@ namespace ECApp_Data
         [MaxLength(100)]
         public string Name { get; set; }
 
-        
         [MinLength(3)]
         [MaxLength(6)]
         public string Color { get; set; }
 
-        
         [MinLength(2)]
         [MaxLength(50)]
         public string IconCssClass { get; set; }
-	}
+    }
 }
 

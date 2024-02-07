@@ -73,16 +73,6 @@
                     </div>
                 </form>
             </div>
-            <div class="col-lg-3 col-6 text-right">
-                <a href="" class="btn border">
-                    <i class="fas fa-heart text-primary"></i>
-                    <span class="badge">0</span>
-                </a>
-                <a asp-controller="Cart" asp-action="Edit" class="btn border">
-                    <i class="fas fa-shopping-cart text-primary"></i>
-                    <span class="badge">0</span>
-                </a>
-            </div>
         </div>
     </div>
     <!-- Topbar End -->
@@ -102,12 +92,13 @@
                     <a asp-controller="Home" asp-action="Contact" class="nav-item nav-link">İletişim</a>
                 </div>
                 <div class="navbar-nav ml-auto py-0">
-                    <div class="nav-item dropdown" style="border: 1px solid #D19C97; border-radius: 50px">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown">
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle btn border" data-toggle="dropdown">
                             <i style="color: #D19C97" class="fa-solid fa-user"></i>
                         </a>
                         <div class="dropdown-menu rounded-0 m-0">
                             <a asp-controller="Profile" asp-action="Details" class="nav-item nav-link">Kullanıcı Bilgileri</a>
+                            <a asp-controller="Cart" asp-action="Edit" class="nav-item nav-link">Sepetim</a>
                             <a asp-controller="Profile" asp-action="MyOrders" class="nav-item nav-link">Siparişlerim</a>
                             <a asp-controller="Profile" asp-action="MyProducts" class="nav-item nav-link">Ürünlerim</a>
                             <a asp-controller="Auth" asp-action="Login" class="nav-item nav-link">Giriş Yap</a>

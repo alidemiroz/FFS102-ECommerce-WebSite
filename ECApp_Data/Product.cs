@@ -29,7 +29,6 @@ namespace ECApp_Data
         [Required]
         public bool Enabled { get; set; } = true;
 
-
     }
 }
 

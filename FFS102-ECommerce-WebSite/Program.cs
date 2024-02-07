@@ -5,7 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<ECApp_Data.DataContext>(options => {
+builder.Services.AddDbContext<ECApp_Data.DataContext>(options =>
+{
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
@@ -38,4 +39,3 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.Run();
-
